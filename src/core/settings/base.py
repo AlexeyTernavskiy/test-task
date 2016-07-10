@@ -54,6 +54,8 @@ DJANGO_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'src.apps.product',
 ]
 
 INSTALLED_APPS = DJANGO_APPS
