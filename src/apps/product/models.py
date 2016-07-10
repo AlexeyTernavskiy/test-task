@@ -60,7 +60,7 @@ class ProductModel(BaseInfoMixin, TimeStampedModel):
     class Meta:
         verbose_name = _('Product')
         verbose_name_plural = _('Products')
-        ordering = ('-created',)
+        ordering = ('name',)
 
     def get_absolute_url(self):
         return reverse('products:product-detail', args=[self.category.slug, self.slug])
