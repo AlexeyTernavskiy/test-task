@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import datetime
+
 from django.db.models import Count
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, View, DetailView
@@ -45,3 +47,13 @@ class ProductDetailView(DetailView):
 
     def get_object(self):
         return get_object_or_404(ProductModel, slug=self.kwargs['product_slug'])
+
+
+class LatestProductListView(ListView):
+    template_name = 'pages/latest_product.html'
+    model = ProductModel
+    context_object_name = 'products'
+
+    def get_queryset(self):
+        return super(LatestProductListView, self).get_queryset().prefetch_related('category', 'user').filter(
+            created__gte=(datetime.datetime.now() - datetime.timedelta(days=1))).order_by('-created')
