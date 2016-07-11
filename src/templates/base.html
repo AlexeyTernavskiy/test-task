@@ -38,11 +38,11 @@
                     </li>
                 {% endif %}
                 <li class="nav-item">
-                    <a href="{#  #}" class="btn btn-danger">{% trans 'Log Out' %}</a>
+                    <a href="{% url 'account_logout' %}" class="btn btn-danger">{% trans 'Log Out' %}</a>
                 </li>
             {% else %}
                 <li class="nav-item">
-                    <a href="{#  #}" class="btn btn-success">{% trans 'Sign In' %}</a>
+                    <a href="{% url 'account_login' %}" class="btn btn-success">{% trans 'Sign In' %}</a>
                 </li>
             {% endif %}
         </ul>
@@ -50,6 +50,13 @@
 </header>
 
 <main class="main-content">
+    {% block messages %}
+        {% if messages %}
+            {% for message in messages %}
+                <div id="alert" class="alert alert-success" role="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endblock %}
     {% block content %}
 
     {% endblock %}

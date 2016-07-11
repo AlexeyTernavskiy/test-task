@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
 """Common settings and globals."""
+from sys import path
+
 from genericpath import exists
 from os import mkdir
 from os.path import abspath, basename, dirname, join, normpath
-from sys import path
 
 # PATH CONFIGURATION
 # Absolute filesystem path to the Django project directory:
@@ -56,12 +57,35 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 
     'djangobower',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 
     'src.apps.product',
 ]
 
 INSTALLED_APPS = DJANGO_APPS
 # END APP CONFIGURATION
+
+# ALLAUTH CONFIGURATION
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+ACCOUNT_FORMS = {
+    'login': 'src.core.forms.CustomLoginForm',
+    'signup': 'src.core.forms.CustomSignupForm',
+}
+
+# LOGIN URL
+LOGIN_URL = 'account_login'
+# END LOGIN URL
+
+# LOGIN REDIRECT URL
+LOGIN_REDIRECT_URL = '/'
+# END LOGIN REDIRECT URL
+
+# END ALLAUTH CONFIGURATION
 
 # BOWER CONFIGURATION
 BOWER_COMPONENTS_ROOT = PROJECT_ROOT

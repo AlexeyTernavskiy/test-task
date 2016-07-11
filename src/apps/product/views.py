@@ -5,13 +5,9 @@ import datetime
 
 from django.db.models import Count
 from django.shortcuts import get_object_or_404
-from django.views.generic import ListView, View, DetailView
+from django.views.generic import ListView, DetailView
 
 from src.apps.product.models import CategoryModel, ProductModel
-
-
-class TestView(View):
-    pass
 
 
 class CategoriesListView(ListView):
@@ -21,7 +17,7 @@ class CategoriesListView(ListView):
     paginate_by = 3
 
     def get_queryset(self):
-        return super(CategoriesListView, self).get_queryset().annotate(product_count=Count('product'))
+        return super(CategoriesListView, self).get_queryset().select_related().annotate(product_count=Count('product'))
 
 
 class ProductsListView(ListView):
@@ -31,7 +27,7 @@ class ProductsListView(ListView):
     paginate_by = 10
 
     def get_queryset(self):
-        return super(ProductsListView, self).get_queryset().prefetch_related('category', 'user').filter(
+        return super(ProductsListView, self).get_queryset().select_related('category').filter(
             category_id=self.kwargs['category_slug'])
 
     def get_context_data(self, **kwargs):
@@ -46,10 +42,10 @@ class ProductDetailView(DetailView):
     context_object_name = 'product'
 
     def get_object(self):
-        return get_object_or_404(ProductModel, slug=self.kwargs['product_slug'])
+        return get_object_or_404(ProductModel.objects.prefetch_related('category', 'user'), slug=self.kwargs['product_slug'])
 
 
-class LatestProductListView(ListView):
+class LatestProductListView(ListView, ):
     template_name = 'pages/latest_product.html'
     model = ProductModel
     context_object_name = 'products'
