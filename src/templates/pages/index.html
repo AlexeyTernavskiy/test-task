@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}
+    {% trans 'Index page' %} {{ block.super }}
+{% endblock %}
+{% block content %}
+    <div class="jumbotron">
+        <header class="text-md-center">
+            <h1>{% trans 'Test Task' %}</h1>
+        </header>
+        <p>{% trans 'Create django-project with one application in git repositories' %}</p>
+        <ul>
+            <li>
+                {% trans 'Add the model' %} <code>Category</code> {% trans 'with fields' %}
+                <ul>
+                    <li>name</li>
+                    <li>slug</li>
+                    <li>description</li>
+                </ul>
+            </li>
+            <li>
+                {% trans 'Add the model' %} <code>Product</code> {% trans 'with fields' %}
+                <ul>
+                    <li>name</li>
+                    <li>slug</li>
+                    <li>description</li>
+                    <li>price</li>
+                    <li>created_at</li>
+                    <li>modified_at</li>
+                </ul>
+            </li>
+            <li>
+                {% trans 'Add all the models in the admin panel (all of the objects to be displayed on the field name)' %}
+            </li>
+            <li>
+                {% trans 'Create a page with a list of categories, display all fields and links to page' %} <code>(/products/)</code>
+            </li>
+            <li>
+                {% trans 'Create a page with a list of products of parent category, display all fields and links to page' %} <code>(/products/&lt;category_slug&gt;/)</code>
+            </li>
+            <li>
+                {% trans 'Create a product page display name, description, and price of the product' %} <code>(/products/&lt;category_slug&gt;/&lt;product_slug&gt;/)</code>
+            </li>
+            <li>
+                {% trans 'Create a page with a list of products added in the last 24 hours, make this page accessible only to logged users' %}
+            </li>
+            <li>
+                {% trans 'Use migrations' %}
+            </li>
+            <li>
+                {% trans 'Write unit tests for one page' %}
+            </li>
+            <li>
+                {% trans 'Use MySQL or PostgreSQL (at choice)' %}
+            </li>
+            <li>
+                {% trans 'Make two settings available: for development and for deploy' %}
+            </li>
+            <li>
+                {% trans 'All pages should be available on the links' %}
+            </li>
+            <li>
+                {% trans 'Create a base template file and extend from it all the other' %}
+            </li>
+            <li>
+                {% trans 'Add a file with dependencies' %}
+            </li>
+            <li>
+                {% trans 'Basic language - English' %}
+            </li>
+        </ul>
+    </div>
+{% endblock %}

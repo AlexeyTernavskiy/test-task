@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
 """Common settings and globals."""
+from sys import path
+
 from genericpath import exists
 from os import mkdir
 from os.path import abspath, basename, dirname, join, normpath
-from sys import path
 
 # PATH CONFIGURATION
 # Absolute filesystem path to the Django project directory:
@@ -55,12 +56,21 @@ DJANGO_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'djangobower',
+
     'src.apps.product',
 ]
 
 INSTALLED_APPS = DJANGO_APPS
 # END APP CONFIGURATION
 
+# BOWER CONFIGURATION
+BOWER_COMPONENTS_ROOT = PROJECT_ROOT
+BOWER_INSTALLED_APPS = (
+    'bootstrap#v4.0.0-alpha.2',
+    'fontawesome#^4.5.0',
+)
+# END BOWER CONFIGURATION
 
 # MIDDLEWARE CONFIGURATION
 MIDDLEWARE_CLASSES = (
@@ -178,6 +188,8 @@ STATICFILES_DIRS = [
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+
+    'djangobower.finders.BowerFinder',
 )
 # END STATIC FILE CONFIGURATION
 
