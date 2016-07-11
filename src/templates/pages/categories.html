@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}
+    {% trans 'List of Categories' %} {{ block.super }}
+{% endblock %}
+{% block content %}
+    <header class="text-md-center">
+        <h2>{% trans 'List of Categories' %}:</h2>
+    </header>
+    {% for category in categories %}
+        <div class="list-group">
+            <a href="{{ category.get_absolute_url }}" class="list-group-item list-group-item-info">
+                <h4 class="list-group-item-heading">{{ category.name }}</h4>
+                <p class="list-group-item-text">{{ category.description|truncatewords:50 }}</p>
+                <span class="label label-pill label-default">Products: {{ category.product_count }}</span>
+                <div class="clearfix"></div>
+            </a>
+        </div>
+    {% empty %}
+        <div class="card card-block text-md-center">
+            <h4 class="card-title">{% trans 'No have any categories.' %}</h4>
+        </div>
+    {% endfor %}
+    {% if is_paginated %}
+        <div class="pagination">
+            <nav>
+                <ul class="pager">
+                    {% if page_obj.has_previous %}
+                        <li>
+                            <a href="?page={{ page_obj.previous_page_number }}">{% trans 'Previous' %}</a>
+                        </li>
+                    {% else %}
+                        <li class="disabled">
+                            <span>{% trans 'Previous' %}</span>
+                        </li>
+                    {% endif %}
+                    <li>
+                        <span class="pages">{% trans 'Page' %} {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+                    </li>
+                    {% if page_obj.has_next %}
+                        <li>
+                            <a href="?page={{ page_obj.next_page_number }}">{% trans 'Next' %}</a>
+                        </li>
+                    {% else %}
+                        <li class="disabled">
+                            <span>{% trans 'Next' %}</span>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    {% endif %}
+{% endblock %}

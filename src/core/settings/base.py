@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 
 """Common settings and globals."""
-from sys import path
-
 from genericpath import exists
 from os import mkdir
 from os.path import abspath, basename, dirname, join, normpath
+from sys import path
 
 # PATH CONFIGURATION
 # Absolute filesystem path to the Django project directory:

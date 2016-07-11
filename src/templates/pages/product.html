@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}
+    {% trans 'Product' %}{{ product.name }} {{ block.super }}
+{% endblock %}
+{% block content %}
+    <article class="card">
+        <header class="card-header">
+            <h3><a href="{{ product.category.get_absolute_url }}">{{ product.category.name }}</a>
+            </h3>
+        </header>
+        <section class="card-block">
+            <h4 class="card-title">{{ product.name }}</h4>
+            <p class="card-text">{{ product.description }}</p>
+            <p>Price: {{ product.price }} $</p>
+        </section>
+        <footer class="card-footer">
+            <p>Author: {{ product.user.username }}</p>
+            <p>Created: {{ product.created }}</p>
+        </footer>
+    </article>
+{% endblock %}

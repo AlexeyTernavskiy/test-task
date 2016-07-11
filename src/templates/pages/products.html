@@ -1,8 +1,24 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block title %}
-    {% trans 'List of Categories' %} {{ block.super }}
+    {% trans 'List of Products in ' %}{{ category }} {% trans 'category' %} {{ block.super }}
 {% endblock %}
 {% block content %}
-
+    <header class="text-md-center">
+        <h2>{% trans 'List of Products in ' %}{{ category }} {% trans 'category' %}:</h2>
+    </header>
+    {% for product in products %}
+        <div class="list-group">
+            <a href="{{ product.get_absolute_url }}" class="list-group-item list-group-item-info">
+                <h4 class="list-group-item-heading">{{ product.name }}</h4>
+                <p class="list-group-item-text">{{ product.description|truncatewords:50 }}</p>
+                <span class="label label-pill label-default">Prise: {{ product.price }} $</span>
+                <div class="clearfix"></div>
+            </a>
+        </div>
+    {% empty %}
+        <div class="card card-block text-md-center">
+            <h4 class="card-title">{% trans 'No have any products.' %}</h4>
+        </div>
+    {% endfor %}
 {% endblock %}

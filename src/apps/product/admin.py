@@ -9,7 +9,7 @@ from src.apps.product.models import CategoryModel, ProductModel
 @admin.register(CategoryModel)
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
-    list_display = ('name', 'description',)
+    list_display = ('name', )
 
 
 @admin.register(ProductModel)

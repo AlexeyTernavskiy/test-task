@@ -41,7 +41,7 @@ class CategoryModel(BaseInfoMixin):
         ordering = ('name',)
 
     def get_absolute_url(self):
-        return reverse('products:category-detail', args=[self.slug])
+        return reverse('products:category_detail', args=[self.slug])
 
 
 @python_2_unicode_compatible
@@ -63,4 +63,4 @@ class ProductModel(BaseInfoMixin, TimeStampedModel):
         ordering = ('name',)
 
     def get_absolute_url(self):
-        return reverse('products:product-detail', args=[self.category.slug, self.slug])
+        return reverse('products:product_detail', args=[self.category.slug, self.slug])

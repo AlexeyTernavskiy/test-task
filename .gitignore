@@ -2,3 +2,5 @@
 .vagrant/
 logs/
 bower_components/
+*.sqlite3
+*.db
