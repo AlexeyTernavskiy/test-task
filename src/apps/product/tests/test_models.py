@@ -32,7 +32,7 @@ class ProductModelTestCase(TestCase):
 
     def test_category__get_absolute_url(self):
         self.assertEqual(self.category.get_absolute_url(),
-                         reverse('products:category-detail', args=[self.category.slug]))
+                         reverse('products:category_detail', args=[self.category.slug]))
 
     def test_category__str(self):
         self.assertEqual(self.category.__str__(), self.category.name)
@@ -51,7 +51,7 @@ class ProductModelTestCase(TestCase):
 
     def test_product__get_absolute_url(self):
         self.assertEqual(self.product.get_absolute_url(),
-                         reverse('products:product-detail', args=[self.category.slug, self.product.slug]))
+                         reverse('products:product_detail', args=[self.category.slug, self.product.slug]))
 
     def test_product__str(self):
         self.assertEqual(self.product.__str__(), self.product.name)
