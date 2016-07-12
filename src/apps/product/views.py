@@ -26,7 +26,7 @@ class ProductsListView(ListView):
     template_name = 'pages/products.html'
     model = ProductModel
     context_object_name = 'products'
-    paginate_by = 10
+    paginate_by = 4
 
     def get_queryset(self):
         return super(ProductsListView, self).get_queryset().select_related('category').filter(
@@ -56,6 +56,7 @@ class LatestProductListView(LoginRequiredMixin, ListView):
     template_name = 'pages/latest_product.html'
     model = ProductModel
     context_object_name = 'products'
+    paginate_by = 10
 
     def get_queryset(self):
         return super(LatestProductListView, self).get_queryset().select_related('category').filter(

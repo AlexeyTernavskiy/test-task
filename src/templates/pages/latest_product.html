@@ -21,4 +21,7 @@
             <h4 class="card-title">{% trans 'No have any products.' %}</h4>
         </div>
     {% endfor %}
+    {% if is_paginated %}
+        {% include 'blocks/_pagination.html' %}
+    {% endif %}
 {% endblock %}

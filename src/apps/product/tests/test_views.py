@@ -107,19 +107,19 @@ class ProductViewsTestCase(TestCase):
         self.assertTemplateUsed(response, '404.html')
 
     def test_list_of_products_with_pagination(self):
-        ProductFactory.create_batch(size=26, user=self.user, category=self.category)
-        for page in range(1, 5):
+        ProductFactory.create_batch(size=13, user=self.user, category=self.category)
+        for page in range(1, 6):
             url = reverse('products:category_detail', args=(self.category.slug,)) + '?page={}'.format(page)
             response = self.client.get(url)
-            if page == 4:
+            if page == 5:
                 self.assertEqual(response.status_code, 404)
                 self.assertTemplateUsed(response, '404.html')
                 break
             self.assertEqual(response.status_code, 200)
-            if page < 3:
-                self.assertEqual(len(response.context['products']), 10)
+            if page < 4:
+                self.assertEqual(len(response.context['products']), 4)
             else:
-                self.assertEqual(len(response.context['products']), 7)
+                self.assertEqual(len(response.context['products']), 2)
 
     def test_product_url(self):
         self.assertEqual(self.product.get_absolute_url(),
