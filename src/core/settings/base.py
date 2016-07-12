@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """Common settings and globals."""
+
 from sys import path
 
 from genericpath import exists
@@ -30,7 +31,7 @@ SECRET_KEY = '2h9n#s2i-9g)w+z$9r^-p9+7$kvvs79(0s#vj*chjojw%lo4w0'
 
 # SITE CONFIGURATION
 # Hosts/domain names that are valid for this site
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0']
 # END SITE CONFIGURATION
 
 # MANAGER CONFIGURATION

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """Production settings and globals."""
+
 from os import environ
 
 from .base import *
