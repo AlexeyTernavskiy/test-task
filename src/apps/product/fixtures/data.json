@@ -1,0 +1,175 @@
+[
+  {
+    "model": "product.categorymodel",
+    "pk": "alcohol",
+    "fields": {
+      "name": "Alcohol",
+      "description": "For cheerful and resourceful"
+    }
+  },
+  {
+    "model": "product.categorymodel",
+    "pk": "fish",
+    "fields": {
+      "name": "Fish",
+      "description": "Children of Nemo and Dory"
+    }
+  },
+  {
+    "model": "product.categorymodel",
+    "pk": "meat",
+    "fields": {
+      "name": "Meat",
+      "description": "Fresh animal flesh"
+    }
+  },
+  {
+    "model": "product.categorymodel",
+    "pk": "milk",
+    "fields": {
+      "name": "Milk",
+      "description": "Milk products from infernal cows"
+    }
+  },
+  {
+    "model": "product.categorymodel",
+    "pk": "seafood",
+    "fields": {
+      "name": "Seafood",
+      "description": "Dr. Zoidberg does not recommend"
+    }
+  },
+  {
+    "model": "product.categorymodel",
+    "pk": "fruits",
+    "fields": {
+      "name": "Fruits",
+      "description": "Crazy Fruits"
+    }
+  },
+  {
+    "model": "product.categorymodel",
+    "pk": "vegetables",
+    "fields": {
+      "name": "Vegetables",
+      "description": "Dead Plant"
+    }
+  },
+  {
+    "model": "product.productmodel",
+    "pk": "beer",
+    "fields": {
+      "name": "Beer",
+      "description": "Beer is the world's most widely consumed and probably the oldest alcoholic beverage. it is the third most popular drink overall after water and tea",
+      "price": "2.00",
+      "user": 1,
+      "category": "alcohol",
+      "created": "2016-07-12T14:43:11.253Z",
+      "modified": "2016-07-12T14:43:11.255Z"
+    }
+  },
+  {
+    "model": "product.productmodel",
+    "pk": "scotch-whisky",
+    "fields": {
+      "name": "Scotch whisky",
+      "description": "Attention! All Scotch whisky must be aged in oak barrels for at least three years",
+      "price": "7.00",
+      "user": 1,
+      "category": "alcohol",
+      "created": "2016-07-12T14:43:11.253Z",
+      "modified": "2016-07-12T14:43:11.255Z"
+    }
+  },
+  {
+    "model": "product.productmodel",
+    "pk": "irish-whisky",
+    "fields": {
+      "name": "Irish whiskey",
+      "description": "Most Irish pot still whiskey is distilled thrice, while most (but not all) Scotch whisky is distilled twice",
+      "price": "7.00",
+      "user": 1,
+      "category": "alcohol",
+      "created": "2016-07-12T14:43:11.253Z",
+      "modified": "2016-07-12T14:43:11.255Z"
+    }
+  },
+  {
+    "model": "product.productmodel",
+    "pk": "bourbon-whisky",
+    "fields": {
+      "name": "Bourbon whiskey",
+      "description": "American whiskey",
+      "price": "3.00",
+      "user": 1,
+      "category": "alcohol",
+      "created": "2016-07-12T14:43:11.253Z",
+      "modified": "2016-07-12T14:43:11.255Z"
+    }
+  },
+  {
+    "model": "product.productmodel",
+    "pk": "horilka",
+    "fields": {
+      "name": "Horilka",
+      "description": "Is a Ukrainian alcoholic beverage",
+      "price": "5.00",
+      "user": 1,
+      "category": "alcohol",
+      "created": "2016-07-12T14:43:11.253Z",
+      "modified": "2016-07-12T14:43:11.255Z"
+    }
+  },
+  {
+    "model": "product.productmodel",
+    "pk": "acipenser",
+    "fields": {
+      "name": "Acipenser",
+      "description": "With 17 species many of which are threatened it is the largest genus in the order Acipenseriformes",
+      "price": "5.00",
+      "user": 1,
+      "category": "fish",
+      "created": "2016-07-12T14:43:11.253Z",
+      "modified": "2016-07-12T14:43:11.255Z"
+    }
+  },
+  {
+    "model": "product.productmodel",
+    "pk": "carassius",
+    "fields": {
+      "name": "Carassius",
+      "description": "Funny Carassius",
+      "price": "5.00",
+      "user": 1,
+      "category": "fish",
+      "created": "2016-07-12T14:43:11.253Z",
+      "modified": "2016-07-12T14:43:11.255Z"
+    }
+  },
+  {
+    "model": "product.productmodel",
+    "pk": "goose",
+    "fields": {
+      "name": "Goose",
+      "description": "Sold in pairs",
+      "price": "5.00",
+      "user": 1,
+      "category": "meat",
+      "created": "2016-07-12T14:43:11.253Z",
+      "modified": "2016-07-12T14:43:11.255Z"
+    }
+  },
+  {
+    "model": "product.productmodel",
+    "pk": "lobster",
+    "fields": {
+      "name": "Lobster",
+      "description": "Very tasty",
+      "price": "5.00",
+      "user": 1,
+      "category": "seafood",
+      "created": "2016-07-12T14:43:11.253Z",
+      "modified": "2016-07-12T14:43:11.255Z"
+    }
+  }
+]
