@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """Production settings and globals."""
 from os import environ
 
@@ -8,7 +10,9 @@ from django.core.exceptions import ImproperlyConfigured
 
 
 def get_env_setting(setting):
-    """ Get the environment setting or return exception """
+    """ Get the environment setting or return exception
+    :param setting:
+    """
     try:
         return environ[setting]
     except KeyError:

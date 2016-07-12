@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
 from allauth.account.forms import LoginForm, SignupForm
 from django import forms
 from django.core import validators
