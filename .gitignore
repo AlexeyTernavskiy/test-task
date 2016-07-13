@@ -2,5 +2,7 @@
 .vagrant/
 logs/
 bower_components/
+__pycache__/
+*.pyc
 *.sqlite3
 *.db
