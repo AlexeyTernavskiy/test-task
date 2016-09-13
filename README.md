@@ -1,7 +1,7 @@
 # Django test task
 ###Install###
 
-1. git clone **https://github.com/AlexYanovsky/test-task.git**
+1. git clone **https://github.com/digitalashes/test-task.git**
 2. cd **test-task**
 3. pip install -r **requirements_dev.txt**
 4. change data base connnection in **src/core/settings/development.py** to
